@@ -1,5 +1,5 @@
 public class Farm{
-	private FarmObject[][] farmGrid = new FarmObject[500][500];
+	private FarmObject[][] farmGrid = new FarmObject[World.getGridSize()][World.getGridSize()];
 	private FarmObject[] existingObjects = new FarmObject[20];
 	private int latestObjIndex = 0;
 	public void removeObject(FarmObject obj){

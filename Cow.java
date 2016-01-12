@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Cow extends FarmObject{
 	private Random rand = new Random();
 	private String name;
@@ -10,7 +11,7 @@ public class Cow extends FarmObject{
 	}
 	public void doStuffForAnHour(int hour){
 		if(hour<=18&&hour>=6){
-			int a = rand.randInt(4);
+			int a = rand.nextInt(4);
 			if (a==0&&x!=500&&y!=500){
 				if(Farm.getGrid[x+1][y+1]==null){
 					this.move(x+1, y+1);
@@ -48,6 +49,10 @@ public class Cow extends FarmObject{
 		if(hungriness>=100||age>=90001){
 			Farm.removeObject(this);
 		}
+		int b=rand.nextLong(1000000/age/sicknessLevel);
+		if(b==0){
+			Farm.removeObject(this);
+		}
 
 	}
 	public void move(int newX, int newY){
@@ -57,6 +62,11 @@ public class Cow extends FarmObject{
 		Farm.addObject(this);
 	}
 	public void eat(Grass g){
-		g
+		Farm.removeObject(g);
+		this.move(g.getX(),g.getY());
+		hungriness-=g.getAmount();
+		if(g instanceof PoisonedGrass){
+			sicknessLevel+=g.getAmount();
+		}
 	}
 }
