@@ -1,7 +1,29 @@
+<<<<<<< HEAD
 import java.util.Random;
 public class Cow extends FarmObject{
 	private Random rand = new Random();
+=======
+]public class Cow extends FarmObject{
+>>>>>>> origin/master
 	private String name;
+<<<<<<< HEAD
+	private int hungriness;
+	private int age;
+	private int sicknessLevel;
+	
+	public void doStuffForAnHour(int hour){
+		if(hour<=18&&hour>=6){
+			Random rand = new Random();			//movie in random direction
+			int direction = rand.nextInt(4);
+			if( direction == 0){		
+				x ++;
+			}else if (direction == 1){
+				x--;
+			} else if (direction == 2){
+				y++;
+			} else {
+				y--;
+=======
 	private int hungriness=0;
 	private int age=0;
 	private int sicknessLevel=0;
@@ -43,6 +65,7 @@ public class Cow extends FarmObject{
 				if(Farm.getGrid[x-1][y-1] instanceof Grass){
 					this.eat(Farm.getGrid[x-1][y-1]);
 				}
+>>>>>>> origin/master
 			}
 		}
 		hungriness+=2; age++;
@@ -55,6 +78,8 @@ public class Cow extends FarmObject{
 		}
 
 	}
+<<<<<<< HEAD
+=======
 	public void move(int newX, int newY){
 		Farm.removeObject(this);
 		this.x=newX;
@@ -69,4 +94,5 @@ public class Cow extends FarmObject{
 			sicknessLevel+=g.getAmount();
 		}
 	}
+>>>>>>> origin/master
 }
