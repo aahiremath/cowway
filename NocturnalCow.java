@@ -1,6 +1,6 @@
 public class NocturnalCow extends Cow{
 	public NocturnalCow(){
-			
+			//please help 
 	}
 	
 	@override
