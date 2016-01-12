@@ -7,7 +7,7 @@ public class NocturnalCow extends Cow{
 	private int sicknessLevel;
 	private int x;
 	private int y;
-	public NocturnalCow(int x, int y, String name){
+	public NocturnalCow(int x, int y, String name){		//creates new fields, since Cow's fields are private
 		super(x, y, name);
 		this.x=x;
 		this.y=y;
@@ -18,7 +18,7 @@ public class NocturnalCow extends Cow{
 	}
 	@Override
 	public void doStuffForAnHour(int hour){
-		if(hour<6&&hour>=18){
+		if(hour<6&&hour>=18){							//method exactly the same as super, except that in this line the times are changed
 			int a = rando.nextInt(4);
 			if (a==0&&x!=500&&y!=500){
 				if(Farm.getGrid()[x+1][y+1]==null){

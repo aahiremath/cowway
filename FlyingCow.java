@@ -7,7 +7,7 @@ public class FlyingCow extends Cow{
 	private int sicknessLevel;
 	private int x;
 	private int y;
-	public FlyingCow(int x, int y, String name){
+	public FlyingCow(int x, int y, String name){		//creates new fields, since Cow's fields are private
 		super(x, y, name);
 		this.x=x;
 		this.y=y;
@@ -17,8 +17,8 @@ public class FlyingCow extends Cow{
 		this.sicknessLevel=0;
 	}
 	@Override
-	public void doStuffForAnHour(int hour){
-		int newX=rando.nextInt(500);
+	public void doStuffForAnHour(int hour){				//cow moves to a random location on the grid
+		int newX=rando.nextInt(500);					//method otherwise identical to super
 		int newY=rando.nextInt(500);
 		if(Farm.getGrid()[newX][newY]==null){
 			this.move(newX, newY);

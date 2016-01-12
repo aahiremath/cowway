@@ -3,7 +3,8 @@ public class Grass extends FarmObject{
 	private int x;
 	private int y;
 	private int grassAmount;
-	public Grass(int x, int y){
+	public Grass(int x, int y){ 	//creates new fields, since farmObject's fields are private
+		super(x,y);
 		super( x, y);
 		this.x = x;
 		this.y = y;
@@ -38,7 +39,7 @@ public class Grass extends FarmObject{
 			}
 		}
 	}
-	public int getAmount(){
+	public int getAmount(){			//allows access to grassAmount to other classes
 		return grassAmount;
 	}
 }
