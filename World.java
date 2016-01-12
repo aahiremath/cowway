@@ -1,7 +1,6 @@
 public class World{
 	private Farm[] farms = new Farm[10];
 	private int time;
-	private int gridSize;
 	public void incrementTime(){
 		if(time == 24){
 			time = 1;
@@ -12,8 +11,5 @@ public class World{
 	}
 	public int getTime(){
 		return time;
-	}
-	public int getGridSize(){
-		return gridSize;
 	}
 }
